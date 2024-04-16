@@ -3,6 +3,7 @@
  */
 package gradle.multi.module.project.app;
 
+import gradle.multi.module.project.book.BookDao;
 import gradle.multi.module.project.list.LinkedList;
 
 import static gradle.multi.module.project.utilities.StringUtils.join;
@@ -17,5 +18,11 @@ public class App {
         LinkedList tokens;
         tokens = split(getMessage());
         System.out.println(join(tokens));
+
+
+        // book dao testing
+        System.out.println("get book from dao module: "+BookDao.getBooks());
+
+        System.out.println("creating book from dao module: "+BookDao.createBook("mya"));
     }
 }
